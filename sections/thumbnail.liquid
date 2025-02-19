@@ -1,0 +1,57 @@
+<section>
+    <div class="grid grid-cols-3">
+        {% if section.settings.thumbnail_image1 %}
+            {{ section.settings.thumbnail_image1 | image_url: width: 100, height: 100 | image_tag }}
+        {% else %}
+            <img
+                alt="pic"
+                width="600"
+                height="500"
+                loading="eager"
+                src="{{ 'one.png' | asset_url }}">
+        {% endif %}
+        {% if section.settings.thumbnail_image2 %}
+            {{ section.settings.thumbnail_image2 | image_url: width: 100, height: 100 | image_tag }}
+        {% else %}
+            <img
+                alt="pic"    
+                width="600"
+                height="500"
+                loading="eager"
+                src="{{ 'two.png' | asset_url }}">
+        {% endif %}
+        {% if section.settings.thumbnail_image3 %}
+            {{ section.settings.thumbnail_image3 | image_url: width: 100, height: 100 | image_tag }}
+        {% else %}
+            <img
+                alt="pic"
+                width="600"
+                height="500"
+                loading="eager"
+                src="{{ 'three.png' | asset_url }}">
+        {% endif %}
+    </div>
+</section>
+
+{% schema %}
+{   
+    "name": "thumbnail",
+    "settings": [
+            {
+                "type": "image_picker",
+                "id": "thumbnail_image1",
+                "label": "Thumbnail Image 1"
+            },
+            {
+                "type": "image_picker",
+                "id": "thumbnail_image2",
+                "label": "Thumbnail Image 2"
+            },
+            {
+                "type": "image_picker",
+                "id": "thumbnail_image3",
+                "label": "Thumbnail Image 3"
+            }
+        ]
+}
+{% endschema %}

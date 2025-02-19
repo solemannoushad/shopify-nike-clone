@@ -1,0 +1,87 @@
+{% assign ss = section.settings %}
+{%- if ss.top_bar_visibility -%}
+  <div class="top-bar flex w-full items-center justify-between pr-3" style="color: {{ ss.top_bar_color }}; background-color: {{ ss.top_bar_bg_color }}">
+    <div class="top-bar-icons flex">
+      {% if ss.top_bar_img_1 %}
+        {{ ss.top_bar_img_1 | image_url: width: 50, height: 50 | image_tag }}
+      {% else %}
+        <img
+          alt="pic"
+          width="50"
+          height="50"
+          loading="eager"
+          src="{{ 'a.png' | asset_url }}">
+      {% endif %}
+      {% if ss.top_bar_img_2 %}
+        {{ ss.top_bar_img_2 | image_url: width: 50, height: 50 | image_tag }}
+      {% else %}
+        <img
+          alt="pic"
+          width="50"
+          height="50"
+          loading="eager"
+          src="{{ 'b.png' | asset_url }}">
+      {% endif %}
+    </div>
+    <div class="top-bar-links">
+      {% for block in section.blocks %}
+        {% if block.type == "link" %}
+          <a href="{{ block.settings.link_url }}" class="top-bar-link text-sm mx-1 hover:underline">{{ block.settings.link_text }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "top-bar",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "top_bar_visibility",
+        "label": "Show/Hide Top Bar",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "top_bar_img_1",
+        "label": "Image 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "top_bar_img_2",
+        "label": "Image 2"
+      },
+      {
+        "type": "color",
+        "id": "top_bar_color",
+        "label": "Color",
+        "default": "#000000"
+      }, {
+        "type": "color",
+        "id": "top_bar_bg_color",
+        "label": "Background Color",
+        "default": "#ffffff"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Link",
+        "type": "link",
+        "limit": 2,
+        "settings": [
+          {
+            "type": "text",
+            "id": "link_text",
+            "label": "Text"
+          }, {
+            "type": "url",
+            "id": "link_url",
+            "label": "URL"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

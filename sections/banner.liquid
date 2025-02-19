@@ -1,0 +1,28 @@
+<div class="banner w-full" style="color: {{ section.settings.banner_color }}; background-color: {{ section.settings.banner_bg_color }};">
+    <h2 class="text-center text-lg p-2">{{ section.settings.banner_text }}</h2>
+</div>
+{% schema %}
+{
+    "name": "banner",
+    "settings": [
+            {
+                "type": "text",
+                "id": "banner_text",
+                "label": "Banner Text",
+                "default": "Members: Free Shipping!"
+            },
+            {
+                "type": "color",
+                "id": "banner_color",
+                "label": "Color",
+                "default": "#000000"
+            },
+            {
+                "type": "color",
+                "id": "banner_bg_color",
+                "label": "Background Color",
+                "default": "#f6f6f6"
+            }
+        ]
+}
+{% endschema %}

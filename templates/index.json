@@ -1,5 +1,21 @@
 {
     "sections": {
-        
-    }
+      "banner": {
+        "type": "banner",
+        "settings": {}
+      },
+      "thumbnail": {
+        "type": "thumbnail",
+        "settings": {}
+      },
+      "more-info": {
+        "type": "more-info",
+        "settings": {}
+      },
+    },
+    "order": [
+      "banner",
+      "thumbnail",
+      "more-info"
+    ]
 }

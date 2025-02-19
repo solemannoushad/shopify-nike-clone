@@ -1,0 +1,62 @@
+{% assign ss = section.settings %}
+{% assign title = "" %}
+{% if ss.more_info_title != blank %}
+    {% assign title = ss.more_info_title %}
+    {% else %}
+    {% assign title = "The Resolution Starter Pack" %}
+{% endif %}
+{% assign text = "" %}
+{% if ss.more_info_text != blank %}
+    {% assign text = ss.more_info_text %}
+{% else %}
+    {% assign text = "Go for all your fitness goals with a curated collection of new kicks breathable apparel, and more supportive styles" %}
+{% endif %}
+
+
+
+<section class="flex items-center justify-center flex-col p-5" style="color: {{ section.settings.more_info_color }}; background-color: {{ section.settings.more_info_bg_color }};">
+    <h2 class="text-6xl my-1 font-bold">{{ title }}</h2>
+    <p class="text-lg max-w-[40%] text-center my-1">{{ text }}</p>
+    <a href="{{ ss.more_info_button_url }}">{{ ss.more_info_button_text }}</a>
+</section>
+
+{% schema %}
+{
+    "name": "more-info",
+    "settings": [
+            {
+                "type": "text",
+                "id": "more_info_title",
+                "label": "More Info Title"
+            },
+            {
+                "type": "text",
+                "id": "more_info_text",
+                "label": "More Info Text"
+            },
+            {
+                "type": "color",
+                "id": "more_info_color",
+                "label": "Color",
+                "default": "#000000"
+            },
+            {
+                "type": "color",
+                "id": "more_info_bg_color",
+                "label": "Background Color",
+                "default": "#ffffff"
+            },
+            {
+                "type": "text",
+                "id": "more_info_button_text",
+                "label": "More Info Button Text",
+                "default": "Shop Now"
+            },
+            {
+                "type": "url",
+                "id": "more_info_button_url",
+                "label": "More Info Button URL"
+            }
+        ]
+}
+{% endschema %}

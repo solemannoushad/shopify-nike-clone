@@ -1,0 +1,18 @@
+<header class="flex items-center justify-between py-3 px-5">
+    <div class="logo">
+        <a href="/">
+            <img width="80" height="50" loading="eager" src="{{ 'nike.png' | asset_url }}" alt="">
+        </a>
+    </div>
+    <ul class="nav-links flex items-center">
+        {% for link in linklists['main-menu'].links %}
+            <li class="mx-3 text-base capitalize">{{ link.title | link_to: link.url }}</li>
+        {% endfor %}
+    </ul>
+    <div class="flex items-center">
+        <form action="/search">
+            <input type="search" name="search" id="search" placeholder="Search" class="rounded-md bg-slate-200 px-2 py-1">
+        </form>
+        <img width="40" height="50" loading="eager" src="{{ 'd.png' | asset_url }}" alt="" class="cursor-pointer">
+    </div>
+</header>

@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nike - Shopify Theme Development</title>
     {{ content_for_header }}
+    {{ 'tailwind-output.css' | asset_url | stylesheet_tag }}
 </head>
 <body>
+    {% section 'top-bar' %}
+    {% section 'header' %}
     {{ content_for_layout }}
-    {% sections 'navbar' %}
 </body>
 </html>
