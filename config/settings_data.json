@@ -1,0 +1,48 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "sections": {
+      "top-bar": {
+        "type": "top-bar",
+        "blocks": {
+          "link_jTb8iF": {
+            "type": "link",
+            "settings": {
+              "link_text": "Help",
+              "link_url": "shopify://policies/privacy-policy"
+            }
+          },
+          "link_W7WRJU": {
+            "type": "link",
+            "settings": {
+              "link_text": "Account",
+              "link_url": "shopify://pages/contact"
+            }
+          }
+        },
+        "block_order": [
+          "link_jTb8iF",
+          "link_W7WRJU"
+        ],
+        "settings": {
+          "top_bar_visibility": true,
+          "top_bar_color": "#000000",
+          "top_bar_bg_color": "#ffffff"
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {}
+      }
+    },
+    "content_for_index": []
+  }
+}
